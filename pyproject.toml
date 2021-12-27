@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "e-commerce-backend"
+version = "0.1.0"
+description = "eCommerce Python REST API"
+authors = ["Himanshu Sharma <88159798+sh-himanshu@users.noreply.github.com>"]
+packages = [
+    { include = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4"
+uvloop = {version = "^0.16.0", platform = "linux"}
+fastapi = {extras = ["all"], version = "^0.70.1"}
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.isort]
+profile = "black"
+include_trailing_comma = true
+lines_after_imports = 2
+lines_between_types = 1
+use_parentheses = true
+filter_files = true
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
