@@ -11,9 +11,11 @@ packages = [
 python = ">=3.8,<4"
 uvloop = {version = "^0.16.0", platform = "linux"}
 fastapi = {extras = ["all"], version = "^0.70.1"}
+tortoise-orm = {extras = ["aiosqlite"], version = "^0.18.0"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+black = {version = "^21.12b0", allow-prereleases = true}
 
 [tool.isort]
 profile = "black"
